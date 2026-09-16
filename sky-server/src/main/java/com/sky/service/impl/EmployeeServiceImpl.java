@@ -83,6 +83,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     /**
+     * 启用禁用员工账号
+     *
+     */
+    public void startOrStop(Integer status, Long id) {
+        Employee employee = Employee.builder()
+                .status(status)
+                .id(id)
+                .build();
+        employeeMapper.update(employee);
+    }
+
+    /**
      * 新增员工
      * @param employeeDTO
      */
