@@ -16,8 +16,11 @@ public class Result<T> implements Serializable {
     private T data; //数据
 
     public static <T> Result<T> success() {
+        // Create a new instance of Result with generic type T
         Result<T> result = new Result<T>();
+        // Set the success code to 1
         result.code = 1;
+        // Return the created Result object
         return result;
     }
 
